@@ -34,9 +34,4 @@ router.get('/getUserList', function(req, res, next) {
   })
 });
 
-/* Update User */
-router.post('/updateUser', function(req, res, next) {
-  
-});
-
 module.exports = router;
