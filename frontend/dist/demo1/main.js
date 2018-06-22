@@ -432,7 +432,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  report works!\n</p>\n"
+module.exports = "<p>\n  report works!\n</p>\n\n{{reportObj | json}}"
 
 /***/ }),
 
@@ -473,6 +473,7 @@ var ReportComponent = /** @class */ (function () {
             _this.dataService.getUserList(_this.id)
                 .subscribe(function (data) {
                 console.log(data);
+                _this.reportObj = data;
             }, function (err) {
             });
         }, function (err) {

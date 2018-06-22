@@ -10,23 +10,24 @@ import { DataService } from '../services/data.service';
 export class ReportComponent implements OnInit {
 
   id: any;
-
+  reportObj: any
   constructor(private route: ActivatedRoute, private dataService: DataService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.id=params["id"];
+      this.id = params["id"];
       this.dataService.getUserList(this.id)
-      .subscribe((data)=>{
-        console.log(data)
-      },
-    err=>{
-        
-    })
-    },
-    err =>{
+        .subscribe((data) => {
+          console.log(data)
+          this.reportObj = data
+        },
+          err => {
 
-    }
+          })
+    },
+      err => {
+
+      }
     )
   }
 
