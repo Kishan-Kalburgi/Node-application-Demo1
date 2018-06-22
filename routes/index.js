@@ -18,14 +18,14 @@ router.post('/saveUser', function(req, res) {
     if(err){
       res.status(403).json({msg: "Something went wrong  "})
     } else {
-      res.status(200).json({msg: "User record saved succesfully"})
+      res.status(200).json({msg: "User record saved succesfully", id: data.id})
     }
   })
 });
 
 /* Get User List */
-router.get('/getUserList', function(req, res, next) {
-  User.find({}, function(err, results){
+router.get('/getUserList/:id', function(req, res, next) {
+  User.find({_id: req.params.id}, function(err, results){
     if(err){
       res.status(403).json({msg: "Something went wrong  "})
     } else {
