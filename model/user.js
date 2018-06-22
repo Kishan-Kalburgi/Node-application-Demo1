@@ -8,7 +8,9 @@ var userSchema = new Schema({
   dob: { type: Date, default: Date.now },
   startDate: { type: Date, default: Date.now },
   endDate: { type: Date, default: Date.now },
-  ethnicity: String
+  ethnicity: String,
+  fromPlace: String,
+  toPlace: String,
 });
 
 module.exports = mongoose.model('Users', userSchema);
